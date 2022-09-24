@@ -86,13 +86,11 @@ class BiometricsAuth {
     }
   }
 
-  Future<AuthKey?> authenticateAndGetAuthKey(
-      {String? reason, AuthenticationOptions? options}) async {
+  Future<AuthKey?> authenticateAndGetAuthKey({String? reason}) async {
     try {
       final didAuthenticate = await _localAuthentication.authenticate(
         localizedReason: reason ?? _localizedReason!,
-        options:
-            options ?? AuthenticationOptions(biometricOnly: _biometricsOnly),
+        options: AuthenticationOptions(biometricOnly: _biometricsOnly),
       );
       if (didAuthenticate) {
         return AuthKey(key: await _getAuthKey);
@@ -107,13 +105,13 @@ class BiometricsAuth {
     }
   }
 
-  Future<BiometricsResponse> authenticate(
-      {String? reason, AuthenticationOptions? options}) async {
+  Future<BiometricsResponse> authenticate({
+    String? reason,
+  }) async {
     try {
       final didAuthenticate = await _localAuthentication.authenticate(
         localizedReason: reason ?? _localizedReason!,
-        options:
-            options ?? AuthenticationOptions(biometricOnly: _biometricsOnly),
+        options: AuthenticationOptions(biometricOnly: _biometricsOnly),
       );
       if (didAuthenticate) {
         return BiometricsResponse.success;

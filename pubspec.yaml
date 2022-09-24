@@ -1,7 +1,8 @@
 name: local_biometrics_auth
-description: A new Flutter project.
+description: This package provide a means to authenticate a user with biometrics and securely cache sensitive information like password and tokens
 version: 0.0.1
-homepage:
+repository: https://github.com/isiyemijoe/local_biometrics_auth
+issue_tracker: https://github.com/isiyemijoe/local_biometrics_auth/issues
 
 environment:
   sdk: '>=2.18.0 <3.0.0'
