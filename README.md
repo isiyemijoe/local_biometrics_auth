@@ -1,4 +1,4 @@
-# local_auth
+# local_biometrics_auth
 
 <?code-excerpt path-base="excerpts/packages/local_auth_example"?>
 
@@ -20,7 +20,7 @@ import 'package:local_biometrics_auth/local_biometrics_auth.dart';
 // ···
   final BiometricsAuth auth =  BiometricsAuth.initialise();
   // ···
-    final bool canAuthenticateWithBiometrics =  auth.canUseBiometrics;
+    final bool canUseBiometrics =  auth.canUseBiometrics;
     final bool isBiometricsSetup =  await auth.isBiometricsSetup;
 ```
 
